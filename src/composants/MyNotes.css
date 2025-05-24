@@ -1,0 +1,129 @@
+/* MyNotes.css */
+.mynotes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.mynotes-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.mynotes-container h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3498db;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table thead {
+  background-color: #3498db;
+  color: white;
+}
+
+.data-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.data-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.data-table tbody tr:hover {
+  background-color: #e8f4fc;
+}
+
+/* Style pour les notes */
+.data-table td:nth-child(3) {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Style pour les crédits */
+.data-table td:nth-child(4) {
+  color: #7f8c8d;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mynotes-container {
+    padding: 1rem;
+  }
+  
+  .data-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Style pour les différentes notes */
+.data-table tbody tr td:nth-child(3) {
+  position: relative;
+}
+
+.data-table tbody tr td:nth-child(3)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(var(--grade) * 5%);
+  height: 2px;
+  background-color: #2ecc71;
+  transition: width 0.5s ease;
+}
+
+/* Couleurs selon les notes */
+.data-table tbody tr td:nth-child(3)[data-grade="20"] {
+  color: #27ae60;
+}
+
+.data-table tbody tr td:nth-child(3)[data-grade^="1"] {
+  color: #e74c3c;
+}
+
+.data-table tbody tr td:nth-child(3)[data-grade^="0"] {
+  color: #c0392b;
+  font-weight: bold;
+}

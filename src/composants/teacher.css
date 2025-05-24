@@ -1,0 +1,381 @@
+/* teacher.css - Version améliorée */
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --secondary: #2c3e50;
+  --danger: #e74c3c;
+  --danger-dark: #c0392b;
+  --light: #ecf0f1;
+  --dark: #34495e;
+  --text-muted: #7f8c8d;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --transition: all 0.3s ease;
+}
+
+.teacher-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--secondary);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* En-tête amélioré */
+.teacher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--white);
+}
+
+.teacher-title {
+  font-size: 2.4rem;
+  margin: 0;
+  font-weight: 600;
+  position: relative;
+}
+
+.teacher-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--white);
+  margin-top: 0.8rem;
+  border-radius: 2px;
+}
+
+.logout-button {
+  padding: 0.7rem 1.5rem;
+  background: var(--white);
+  color: var(--danger);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.logout-button:hover {
+  background: var(--danger);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Grille de tableau de bord améliorée */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.dashboard-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(52, 152, 219, 0.2);
+}
+
+.dashboard-card h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--light);
+  font-weight: 600;
+}
+
+/* Statistiques améliorées */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--light);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary);
+}
+
+.stat-item:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+/* Liste des mises à jour améliorée */
+.updates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  border-bottom: 1px dashed var(--light);
+}
+
+.update-item:last-child {
+  border-bottom: none;
+}
+
+.update-icon {
+  font-size: 1.8rem;
+  margin-right: 1.5rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.update-content {
+  flex: 1;
+}
+
+.update-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.update-time {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.update-time::before {
+  content: '🕒';
+  font-size: 0.8rem;
+}
+
+/* Actions rapides améliorées */
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background: var(--light);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: 120px;
+  text-align: center;
+}
+
+.action-button:hover {
+  background: var(--white);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-sm);
+}
+
+.action-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.action-button span {
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+/* Dates importantes améliorées */
+.deadlines-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--light);
+}
+
+.deadline-item:last-child {
+  border-bottom: none;
+}
+
+.deadline-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.deadline-item:hover .deadline-date {
+  background: var(--secondary);
+  transform: scale(1.05);
+}
+
+.deadline-day {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.deadline-month {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.deadline-content {
+  flex: 1;
+}
+
+.deadline-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.deadline-time {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deadline-time::before {
+  content: '⏰';
+  font-size: 0.8rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design amélioré */
+@media (max-width: 992px) {
+  .teacher-container {
+    padding: 1.5rem;
+  }
+  
+  .teacher-title {
+    font-size: 2rem;
+  }
+  
+  .dashboard-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .teacher-title::after {
+    margin: 0.8rem auto 0;
+  }
+  
+  .logout-button {
+    align-self: center;
+  }
+  
+  .dashboard-card {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .teacher-container {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .update-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .update-icon {
+    margin-right: 0;
+  }
+}

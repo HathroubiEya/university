@@ -1,0 +1,124 @@
+/* inscription.css */
+.inscription-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+.inscription-container form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.inscription-container h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.inscription-container input,
+.inscription-container select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.inscription-container input:focus,
+.inscription-container select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.inscription-container button {
+  width: 100%;
+  padding: 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.inscription-container button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.retour-button {
+  background: #f8f9fa !important;
+  color: #2c3e50 !important;
+  border: 1px solid #ddd !important;
+}
+
+.retour-button:hover {
+  background: #e9ecef !important;
+  transform: translateY(-2px) !important;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #27ae60;
+  background-color: #d5f5e3;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .inscription-container {
+    padding: 1rem;
+  }
+  
+  .inscription-container form {
+    padding: 1.5rem;
+  }
+  
+  .inscription-container h2 {
+    font-size: 1.5rem;
+  }
+}

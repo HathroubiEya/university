@@ -1,0 +1,218 @@
+/* courses.css */
+.courses-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+/* Statistiques */
+.courses-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-box {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Grille des cours */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Premier cours spécial */
+.course-card:first-child {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+}
+
+.course-card:first-child .course-icon {
+  font-size: 5rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-card:first-child .course-content {
+  padding: 2rem;
+  flex: 1;
+}
+
+.course-card:first-child .course-title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Style standard pour les autres cours */
+.course-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.course-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.course-instructor {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.course-details {
+  margin: 1rem 0;
+}
+
+.course-schedule, .course-room {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #34495e;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+/* Barre de progression */
+.progress-container {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Bouton */
+.course-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.course-button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.course-card:first-child .course-button {
+  background: white;
+  color: #3498db;
+}
+
+.course-card:first-child .course-button:hover {
+  background: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .courses-stats {
+    flex-direction: column;
+  }
+  
+  .course-card:first-child {
+    flex-direction: column;
+  }
+  
+  .courses-content {
+    padding: 1rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.course-card {
+  animation: fadeIn 0.5s ease-out;
+}
